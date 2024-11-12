@@ -1,11 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio CV - Muhammad Bakhtawar</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+  <!-- Star Background Container -->
+  <div class="stars"></div>
+
+  <!-- Introduction Section -->
+  <section id="intro">
+    <div class="container">
+      <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+      <h1>Muhammad Bakhtawar</h1>
+      <p class="subtitle">Web Developer | Programmer | Designer</p>
+      <a href="#contact" class="contact-btn">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill">
+        <span>HTML</span>
+        <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+      </div>
+      <div class="skill">
+        <span>CSS</span>
+        <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
+      </div>
+      <div class="skill">
+        <span>JavaScript</span>
+        <div class="progress-bar"><div class="progress" style="width: 75%"></div></div>
+      </div>
+      <div class="skill">
+        <span>React</span>
+        <div class="progress-bar"><div class="progress" style="width: 70%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience & Education Section -->
+  <section id="experience">
+    <h2>Experience & Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Web Developer - ABC Company</h3>
+        <span>2023 - Present</span>
+        <p>Developed responsive websites and applications for various clients.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Computer Science - XYZ University</h3>
+        <span>2020 - 2023</span>
+        <p>Focused on web development, programming, and user experience design.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>Projects</h2>
+    <div class="portfolio-container">
+      <div class="portfolio-item">
+        <img src="project1.jpg" alt="Project 1">
+        <h3>Project 1</h3>
+        <p>A description of the project goes here.</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="project2.jpg" alt="Project 2">
+        <h3>Project 2</h3>
+        <p>A description of the project goes here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
