@@ -1,197 +1,411 @@
-/* General Styles */
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #000000;
-    color: #e0e0e0;
-    margin: 0;
-    padding: 0;
-    overflow-y: auto; /* Ensures scrollbar visibility */
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Container for sections */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: #fff;
+  font-weight: 600;
+}
+
+p, span {
+  font-size: 1.1rem;
+}
+
+/* Navbar */
+nav {
+  background-color: #000;
+  color: #00bfff;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #00bfff;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #009fd1;
+}
+
+/* Hero Section */
+#intro {
+  background: url('path-to-your-image.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Adding a dynamic starry background */
+#intro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('path-to-your-animation-image-or-video') no-repeat center center/cover;
+  background-size: cover;
+  animation: backgroundAnimation 30s linear infinite;
+  z-index: -1;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0 0;
   }
-  
-  /* Star Background Styles */
-  .stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Places stars behind all content */
-    overflow: hidden;
-    pointer-events: none; /* Prevents stars from affecting content */
+  100% {
+    background-position: 100% 100%;
   }
-  
-  .star {
-    position: absolute;
-    background-color: #00bfff;
-    border-radius: 50%;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 4px solid #00bfff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 191, 255, 0.6);
+}
+
+#intro h1 {
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 700;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+  animation: fadeIn 2s ease-in-out;
+}
+
+#intro .subtitle {
+  color: #00bfff;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in-out 1s;
+}
+
+.contact-btn {
+  background-color: #00bfff;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #009fd1;
+  transform: scale(1.1);
+}
+
+/* Text Fade-in Animation */
+@keyframes fadeIn {
+  0% {
     opacity: 0;
-    animation: glow 4s linear infinite;
+    transform: translateY(20px);
   }
-  
-  @keyframes glow {
-    0%, 100% {
-      opacity: 0;
-      transform: scale(0.5);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Container and Header Styles */
-  .container {
-    text-align: center;
-    padding: 60px 20px;
+}
+
+/* Responsive Design for Hero Section */
+@media only screen and (max-width: 768px) {
+  #intro {
+    height: 80vh;
   }
-  
-  h1, h2 {
-    color: #00bfff;
-    font-weight: 600;
-    margin-bottom: 15px;
+
+  #intro h1 {
+    font-size: 2.5rem;
   }
-  
-  .subtitle {
+
+  #intro .subtitle {
     font-size: 1.2rem;
-    color: #b0b0b0;
-    margin-bottom: 20px;
   }
-  
+
   .profile-pic {
-    width: 150px;
-    border-radius: 50%;
-    margin-top: 20px;
-    border: 3px solid #00bfff;
+    width: 120px;
+    height: 120px;
   }
-  
-  /* Button Styles */
-  .contact-btn {
-    display: inline-block;
-    padding: 12px 24px;
-    margin-top: 25px;
-    background-color: #00bfff;
-    color: #000;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: background 0.3s ease;
+}
+
+.contact-btn {
+  background-color: #00bfff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #009fd1;
+}
+
+/* Skills Section */
+#skills {
+  padding: 80px 20px;
+  background-color: #121212;
+  text-align: center;
+}
+
+#skills h2 {
+  font-size: 3rem;
+  color: #00bfff;
+  margin-bottom: 30px;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.skill {
+  margin-bottom: 20px;
+  width: 45%;
+}
+
+.progress-bar {
+  background-color: #444444;
+  border-radius: 5px;
+  height: 12px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.progress {
+  background-color: #00bfff;
+  height: 100%;
+  width: 0;
+  border-radius: 5px;
+  animation: progressAnimation 2s ease-out forwards;
+}
+
+@keyframes progressAnimation {
+  from {
+    width: 0%;
   }
-  
-  .contact-btn:hover {
-    background-color: #009fd1;
+  to {
+    width: var(--skill-width);
   }
-  
-  /* Section Styles */
-  section {
-    padding: 40px 20px;
-    border-bottom: 1px solid #1a1a1a;
+}
+
+/* Experience & Education Section */
+#experience {
+  padding: 80px 20px;
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+#experience h2 {
+  font-size: 3rem;
+  color: #00bfff;
+  margin-bottom: 30px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-item {
+  background-color: #333333;
+  padding: 20px;
+  margin: 20px 0;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-item h3 {
+  color: #fff;
+}
+
+.timeline-item span {
+  color: #00bfff;
+  font-size: 0.9rem;
+}
+
+/* Portfolio Section */
+#portfolio {
+  padding: 80px 20px;
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+#portfolio h2 {
+  font-size: 3rem;
+  color: #00bfff;
+  margin-bottom: 30px;
+}
+
+.portfolio-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.portfolio-item {
+  background-color: #333333;
+  width: 45%;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  text-align: center;
+}
+
+.portfolio-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.portfolio-item h3 {
+  color: #fff;
+  margin-top: 15px;
+}
+
+.portfolio-item p {
+  color: #e0e0e0;
+}
+
+/* Contact Section */
+#contact {
+  padding: 80px 20px;
+  background-color: #333333;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  color: #00bfff;
+  font-weight: 600;
+}
+
+#contact input,
+#contact textarea {
+  padding: 10px;
+  width: 80%;
+  margin: 15px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+#contact button {
+  padding: 15px 30px;
+  background-color: #00bfff;
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#contact button:hover {
+  background-color: #009fd1;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .portfolio-container {
+    flex-direction: column;
   }
-  
-  #skills .skills-container {
-    display: flex;
+
+  .portfolio-item {
+    width: 100%;
+  }
+
+  #contact input, #contact textarea {
+    width: 90%;
+  }
+
+  .skills-container {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .skill {
-    margin: 15px 0;
-    width: 80%;
-  }
-  
-  .progress-bar {
-    background: #1a1a1a;
-    height: 12px;
     width: 100%;
-    border-radius: 20px;
-    overflow: hidden;
+    margin-bottom: 20px;
   }
-  
-  .progress {
-    height: 100%;
-    background: #00bfff;
-    border-radius: 20px;
-    transition: width 0.4s ease;
-  }
-  
-  /* Timeline */
-  .timeline {
-    margin: 20px auto;
-    max-width: 700px;
-    color: #c0c0c0;
-  }
-  
-  .timeline-item {
-    text-align: left;
-    margin-bottom: 25px;
-  }
-  
-  .timeline-item h3 {
-    font-size: 1.1rem;
-    color: #00bfff;
-  }
-  
-  /* Portfolio */
-  .portfolio-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .portfolio-item {
-    width: 45%;
-    background-color: #1a1a1a;
-    padding: 15px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .portfolio-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0, 191, 255, 0.2);
-  }
-  
-  .portfolio-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  
-  /* Contact Form */
-  #contactForm input, #contactForm textarea, #contactForm button {
-    width: 80%;
-    padding: 12px;
-    border-radius: 5px;
-    border: 1px solid #333333;
-    margin-bottom: 15px;
-    background-color: #1a1a1a;
-    color: #e0e0e0;
-  }
-  
-  #contactForm button {
-    background-color: #00bfff;
-    color: #000;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s ease;
-  }
-  
-  #contactForm button:hover {
-    background-color: #009fd1;
-  }
-  
-  /* Responsive Styles */
-  @media only screen and (max-width: 768px) {
-    .portfolio-item {
-      width: 100%;
-    }
-  }
-  
-  @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    .portfolio-item {
-      width: 45%;
-    }
-  }
-  
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: twinkle infinite linear;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
