@@ -1,93 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio CV - Muhammad Bakhtawar</title>
+  <title>Your Portfolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <!-- Star Background Container -->
-  <div class="stars"></div>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="#" class="logo">MyPortfolio</a>
+      </div>
+      <ul class="navbar-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="navbar-toggle" id="navbar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
 
-  <!-- Introduction Section -->
-  <section id="intro">
-    <div class="container">
-      <img src="profile.jpg" alt="Profile Picture of Muhammad Bakhtawar" class="profile-pic">
-      <h1>Muhammad Bakhtawar</h1>
-      <p class="subtitle">Web Developer | Programmer | Designer</p>
-      <a href="#contact" class="contact-btn">Contact Me</a>
+
+  <section id="home" class="home-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome to My Portfolio</h1>
+      <p class="hero-subtitle">I'm [Your Name], a Passionate Developer</p>
+      <a href="#projects" class="cta-btn">See My Work</a>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-container">
-      <div class="skill">
-        <span>HTML</span>
-        <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
-      </div>
-      <div class="skill">
-        <span>CSS</span>
-        <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
-      </div>
-      <div class="skill">
-        <span>JavaScript</span>
-        <div class="progress-bar"><div class="progress" style="width: 75%"></div></div>
-      </div>
-      <div class="skill">
-        <span>React</span>
-        <div class="progress-bar"><div class="progress" style="width: 70%"></div></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Experience & Education Section -->
-  <section id="experience">
-    <h2>Experience & Education</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h3>Web Developer - ABC Company</h3>
-        <span>2023 - Present</span>
-        <p>Developed responsive websites and applications for various clients.</p>
-      </div>
-      <div class="timeline-item">
-        <h3>Computer Science - XYZ University</h3>
-        <span>2020 - 2023</span>
-        <p>Focused on web development, programming, and user experience design.</p>
-      </div>
+  <section id="about" class="about-section">
+    <div class="about-content">
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>Hello! I'm [Your Name], a passionate developer with a love for creating innovative solutions. With experience in front-end and back-end development, I strive to build user-friendly and visually appealing websites.</p>
+            <p>I have a strong understanding of web technologies, including HTML, CSS, JavaScript, and more. My goal is to continuously learn and grow as a developer while delivering high-quality projects.</p>
+        </div>
+        <div class="about-skills">
+            <h3>My Skills</h3>
+            <ul>
+                <li><i class="fab fa-html5"></i> HTML5</li>
+                <li><i class="fab fa-css3-alt"></i> CSS3</li>
+                <li><i class="fab fa-js-square"></i> JavaScript</li>
+                <li><i class="fab fa-react"></i> React</li>
+                <li><i class="fab fa-node"></i> Node.js</li>
+                <li><i class="fab fa-git-alt"></i> Git</li>
+            </ul>
+        </div>
+        <div class="about-image-container">
+            <img src="/pictures/WhatsApp Image 2024-11-13 at 18.51.55_e6f5834a.jpg" alt="Profile Picture" class="about-image">
+        </div>
     </div>
-  </section>
+</section>
+  
 
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <h2>Projects</h2>
-    <div class="portfolio-container">
-      <div class="portfolio-item">
-        <img src="project1.jpg" alt="Project 1 Screenshot">
-        <h3>Project 1</h3>
-        <p>A description of the project goes here.</p>
-      </div>
-      <div class="portfolio-item">
-        <img src="project2.jpg" alt="Project 2 Screenshot">
-        <h3>Project 2</h3>
-        <p>A description of the project goes here.</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
+<section id="projects" class="projects-section">
+  <div class="projects-container">
+      <h2>My Projects</h2>
+      <div class="projects-grid">
+          <div class="project-card">
+              <img src="images/project1.jpg" alt="Project 1">
+              <div class="project-info">
+                  <h3>Project 1</h3>
+                  <p>A brief description of Project 1 goes here. Explain what it does and technologies used.</p>
+                  <div class="project-buttons">
+                      <a href="https://github.com/yourusername/project1" target="_blank" class="project-link">View on GitHub</a>
+                      <a href="https://your-live-demo-link.com" target="_blank" class="project-demo">Live Demo</a>
+                  </div>
+              </div>
+          </div>
+          <div class="project-card">
+              <img src="images/project2.jpg" alt="Project 2">
+              <div class="project-info">
+                  <h3>Project 2</h3>
+                  <p>A brief description of Project 2 goes here. Explain what it does and technologies used.</p>
+                  <div class="project-buttons">
+                      <a href="https://github.com/yourusername/project2" target="_blank" class="project-link">View on GitHub</a>
+                      <a href="https://your-live-demo-link.com" target="_blank" class="project-demo">Live Demo</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+  <section id="contact" class="contact-section">
     <h2>Contact Me</h2>
     <form id="contactForm">
-      <input type="text" placeholder="Your Name" required aria-label="Your Name">
-      <input type="email" placeholder="Your Email" required aria-label="Your Email">
-      <textarea placeholder="Your Message" required aria-label="Your Message"></textarea>
-      <button type="submit">Send Message</button>
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="cta-btn">Send Message</button>
     </form>
+
+    <!-- Success or Failure Message -->
+    <div id="messageStatus" class="message-status"></div>
+
+    <!-- Social Media Links -->
+    <div class="social-links">
+      <h3>Follow Me</h3>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-btn linkedin">LinkedIn</a>
+      <a href="https://github.com/yourprofile" target="_blank" class="social-btn github">GitHub</a>
+      <a href="https://twitter.com/yourprofile" target="_blank" class="social-btn twitter">Twitter</a>
+    </div>
+
+    <!-- Optional Location/Map Section -->
+    <div class="location">
+      <h3>Find Me Here</h3>
+      <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_LINK" width="100%" height="250" style="border:0;"
+        allowfullscreen="" loading="lazy"></iframe>
+    </div>
   </section>
+
+
+
+
+  <footer>
+    <p>&copy; 2024 Your Name | All Rights Reserved</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>
