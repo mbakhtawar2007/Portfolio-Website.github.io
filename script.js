@@ -58,3 +58,37 @@ document.getElementById("contactForm").addEventListener("submit", function(event
       document.getElementById("contactForm").reset();
   }, 1000);
 });
+
+
+// Scroll-to-Top Button
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  
+
+//     window.addEventListener("scroll", () => {
+//       if (window.scrollY > 20) {
+//         scrollToTopBtn.style.display = "block"; 
+//       } else {
+//         scrollToTopBtn.style.display = "none"; 
+//       }
+//     });
+  
+    
+//     scrollToTopBtn.addEventListener("click", () => {
+//       window.scrollTo({
+//         top: 0,
+//         behavior: "smooth",
+//       });
+//     });
+//   });
+  
+//   console.log("Scroll position:", window.scrollY); 
+//   console.log("Button:", scrollToTopBtn); 
+  
+//   window.addEventListener("scroll", () => {
+//     console.log("Scroll position:", window.scrollY);
+//   });
+  
+
+//   console.log(document.getElementById("scrollToTopBtn"));
